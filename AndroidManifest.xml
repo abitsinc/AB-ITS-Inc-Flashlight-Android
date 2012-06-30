@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.abitsinc.andr"
+    android:versionCode="2"
+    android:versionName="2" >
+    
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="7" />
+		<uses-permission android:name="android.permission.CAMERA" />
+    
+		<uses-feature android:name="android.hardware.camera" android:required="false" />
+		<uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+		
+		<supports-screens 
+		    android:smallScreens="true"
+		    android:normalScreens="true"
+		    android:largeScreens="true"
+		    android:resizeable="true"
+		    android:anyDensity="true"/>
+		
+		<!-- icon courtesy of http://www.iconspedia.com/icon/flashlight-15060.html -->
+    <application
+        android:icon="@drawable/flashlight"
+        android:label="@string/app_name" 
+        android:description="@string/desc" >
+        <activity
+            android:name=".FlashlightActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+    
+    <!--
+		This file is part of AB ITS Inc Flashlight Android.
+
+		AB ITS Inc Flashlight Android is free software: you can redistribute it and/or 
+		modify it under the terms of the GNU General Public License as published by
+		the Free Software Foundation, either version 3 of the License, or
+		(at your option) any later version.
+
+		AB ITS Inc Flashlight Android is distributed in the hope that it will be useful,
+		but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+		or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for 
+		more details.
+
+		You should have received a copy of the GNU General Public License
+		along with AB ITS Inc Flashlight Android.  
+		If not, see <http://www.gnu.org/licenses/>. 
+     -->
+
+</manifest>
