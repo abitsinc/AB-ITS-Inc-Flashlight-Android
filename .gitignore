@@ -1,3 +1,5 @@
 *.class
 *.apk
+BuildConfig.java
+R.java
 
