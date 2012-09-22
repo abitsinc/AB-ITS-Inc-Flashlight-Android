@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 		<string name="instr">Press the Back button to exit the application</string>
-		<string name="desc">This app uses the built-in Camera LED as a flashlight. If your device does not have such a LED, it will try to use the screen as a substitute.</string>
+		<string name="desc">This app uses the built-in Camera LED as a flashlight. If your device \
+		    does not have such a LED, it will try to use the screen as a substitute.</string>
 		
 		<string name="status_chk">Camera LED: Checking status</string>
 		<string name="status_set">Camera LED: Set to torch mode</string>
