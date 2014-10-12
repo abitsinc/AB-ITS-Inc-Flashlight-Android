@@ -9,23 +9,22 @@
 		<string name="status_fll">Camera LED: Failed to set</string>
 		<string name="status_nld">Camera LED: No LED found - using white box below as a poor substitute</string>
 		<string name="app_name">Flashlight</string>
-
+		
 		<!--
 		This file is part of AB ITS Inc Flashlight Android.
-
+		
 		AB ITS Inc Flashlight Android is free software: you can redistribute it and/or 
 		modify it under the terms of the GNU General Public License as published by
 		the Free Software Foundation, either version 3 of the License, or
 		(at your option) any later version.
-
+		
 		AB ITS Inc Flashlight Android is distributed in the hope that it will be useful,
 		but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
 		or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for 
 		more details.
-
+		
 		You should have received a copy of the GNU General Public License
 		along with AB ITS Inc Flashlight Android.  
 		If not, see <http://www.gnu.org/licenses/>.  
-		 -->	
-		 
+		-->	
 </resources>
