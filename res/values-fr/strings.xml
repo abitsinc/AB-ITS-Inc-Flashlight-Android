@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+		<string name="instr">Appuyez sur le bouton précédent pour quitter l\'application</string>
+		<string name="desc">Cette app utilise la LED de l\'appareil photo comme lampe. Si votre appareil n\'a pas de LED, l\'app essayera d\'utiliser l\'écran à la place.</string>
+		
+		<string name="status_chk">LED de l\'appareil photo : Vérification du statut</string>
+		<string name="status_set">LED de l\'appareil photo : Réglé sur le mode torche</string>
+		<string name="status_fll">LED de l\'appareil photo : Impossible de régler le mode</string>
+		<string name="status_nld">LED de l\'appareil photo : Pas de LED trouvé - utilisation de la boîte blanche ci-dessous comme un substitut</string>
+		<string name="app_name">Lampe</string>
+		
+		<!--
+		This file is part of AB ITS Inc Flashlight Android.
+		
+		AB ITS Inc Flashlight Android is free software: you can redistribute it and/or 
+		modify it under the terms of the GNU General Public License as published by
+		the Free Software Foundation, either version 3 of the License, or
+		(at your option) any later version.
+		
+		AB ITS Inc Flashlight Android is distributed in the hope that it will be useful,
+		but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+		or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for 
+		more details.
+		
+		You should have received a copy of the GNU General Public License
+		along with AB ITS Inc Flashlight Android.  
+		If not, see <http://www.gnu.org/licenses/>.  
+		-->
+</resources>
