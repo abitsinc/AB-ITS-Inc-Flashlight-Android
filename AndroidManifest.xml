@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.abitsinc.andr"
-    android:versionCode="2"
-    android:versionName="2" >
+    android:versionCode="3"
+    android:versionName="3" >
     
-    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="7" />
-		<uses-permission android:name="android.permission.CAMERA" />
-    
-		<uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="19" />
+		<uses-feature android:name="android.hardware.camera" android:required="false"/>
 		<uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
 		
 		<supports-screens 
@@ -15,13 +13,15 @@
 		    android:normalScreens="true"
 		    android:largeScreens="true"
 		    android:resizeable="true"
-		    android:anyDensity="true"/>
+		    android:anyDensity="false"/>
 		
 		<!-- icon courtesy of http://www.iconspedia.com/icon/flashlight-15060.html -->
+		<uses-permission android:name="android.permission.CAMERA" />
+		<uses-permission android:name="android.permission.FLASHLIGHT"/>
     <application
         android:icon="@drawable/flashlight"
         android:label="@string/app_name" 
-        android:description="@string/desc" >
+        android:description="@string/desc" android:allowBackup="false">
         <activity
             android:name=".FlashlightActivity"
             android:label="@string/app_name" >
