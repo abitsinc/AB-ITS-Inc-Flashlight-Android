@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+		<string name="instr">Zmáčknout tlačítko zpět pro ukončení aplikace</string>
+		<string name="desc">Tato aplikace používá zabudovanou LED svítilnu fotoaparátu jako baterku. Pokud váš přístroj \
+		    nemá LED, bude jako náhrada použit displej.</string>
+		
+		<string name="status_chk">LED fotoaparátu: Ověřuji stav</string>
+		<string name="status_set">LED fotoaparátu: Nastaven mód baterky</string>
+		<string name="status_fll">LED fotoaparátu: Nastavení selhalo</string>
+		<string name="status_nld">LED fotoaparátu: LED nenalezena - používám bílý čtverec níže jako chabou náhradu</string>
+		<string name="app_name">Baterka</string>
+		
+		<!--
+		This file is part of AB ITS Inc Flashlight Android.
+		
+		AB ITS Inc Flashlight Android is free software: you can redistribute it and/or 
+		modify it under the terms of the GNU General Public License as published by
+		the Free Software Foundation, either version 3 of the License, or
+		(at your option) any later version.
+		
+		AB ITS Inc Flashlight Android is distributed in the hope that it will be useful,
+		but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+		or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for 
+		more details.
+		
+		You should have received a copy of the GNU General Public License
+		along with AB ITS Inc Flashlight Android.  
+		If not, see <http://www.gnu.org/licenses/>.  
+		-->	
+</resources>
