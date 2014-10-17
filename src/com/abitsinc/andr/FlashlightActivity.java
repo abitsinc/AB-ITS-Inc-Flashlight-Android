@@ -78,11 +78,15 @@ public class FlashlightActivity extends Activity {
 			Log.d(TAG, "number of cameras " + numCameras);
 			this.useScreenAsFlashlight(txtStatus);
 		} else {
-			cam = Camera.open(0);
-			if (cam != null) {
-				completeCameraSetup(txtStatus);
-			} else {
-				Log.d(TAG, "Could not open Camera");
+			try { // some devices throw an exception here instead :(
+				cam = Camera.open(0);
+				if (cam != null) {
+					completeCameraSetup(txtStatus);
+				} else {
+					throw new Exception("Unable to open camera");
+				}
+			} catch (Exception e) {
+				Log.d(TAG, "Camera exception " + e.toString());
 				this.useScreenAsFlashlight(txtStatus);
 			}
 		}
