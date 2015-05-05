@@ -36,11 +36,17 @@ public class FlashlightActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		// if application is being restored due to orientation change
+		this.cam = (Camera) getLastNonConfigurationInstance();
 
 		Log.d(TAG, "onCreate - starting...");
 		setContentView(R.layout.flashlight);
 		Log.d(TAG, "cam " + (cam == null));
-		initCamera();
+	}
+
+	@Override
+	public Object onRetainNonConfigurationInstance() {
+		return this.cam;
 	}
 
 	@Override
@@ -55,7 +61,12 @@ public class FlashlightActivity extends Activity {
 	protected void onPause() {
 		super.onPause();
 
-		Log.d(TAG, "onPause " + (cam != null));
+		int gcc = this.getChangingConfigurations();
+		Log.d(TAG, "onPause " + (cam != null) + " gCC " + Integer.toHexString(gcc));
+		// if config change occurred due to orientation change, then let flash be
+		if (gcc == 0x480)
+			return;
+
 		if (cam != null) {
 			Parameters campam = cam.getParameters();
 			if (oldFlashMode != null)
@@ -66,42 +77,50 @@ public class FlashlightActivity extends Activity {
 		}
 	}
 
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		Log.d(TAG, "onDestroy");
+	}
+
 	private void initCamera() {
-		if (cam != null) {
-			Log.d(TAG, "cam not null during initCam");
-			return; // should not happen
-		}
 		TextView txtStatus = (TextView) findViewById(R.id.statusText);
 
-		int numCameras = Camera.getNumberOfCameras();
-		if (numCameras <= 0) {
-			Log.d(TAG, "number of cameras " + numCameras);
-			this.useScreenAsFlashlight(txtStatus);
-		} else {
-			try { // some devices throw an exception here instead :(
-				cam = Camera.open(0);
-				if (cam != null) {
-					completeCameraSetup(txtStatus);
+		try {
+			if (cam == null) {
+				int numCameras = Camera.getNumberOfCameras();
+				if (numCameras <= 0) {
+					Log.d(TAG, "number of cameras " + numCameras);
+					throw new Exception("Cameras not present");
 				} else {
-					throw new Exception("Unable to open camera");
+					cam = Camera.open(0);
+					if (cam == null)
+						throw new Exception("Camera open failed");
 				}
-			} catch (Exception e) {
-				Log.d(TAG, "Camera exception " + e.toString());
-				this.useScreenAsFlashlight(txtStatus);
 			}
+		} catch (Exception e) {
+			Log.d(TAG, "Camera exception " + e.toString());
+			this.useScreenAsFlashlight(txtStatus);
+			return;
 		}
+
+		completeCameraSetup(txtStatus);
 	}
 
 	private void completeCameraSetup(TextView txtStatus) {
 		Parameters campam = cam.getParameters();
+
 		oldFlashMode = campam.getFlashMode();
 		Log.d(TAG, "flashMode1 " + oldFlashMode);
 		if (oldFlashMode == null)
 			oldFlashMode = Parameters.FLASH_MODE_AUTO;
+
 		campam.setFlashMode(Parameters.FLASH_MODE_TORCH);
 		cam.setParameters(campam);
+
 		txtStatus.setText(R.string.status_set);
 		cam.startPreview();
+
 		String tmpFlashMode = campam.getFlashMode();
 		if (tmpFlashMode == null) {
 			Log.d(TAG, "flashMode not supported");
