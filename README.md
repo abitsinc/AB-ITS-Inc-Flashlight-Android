@@ -1,5 +1,7 @@
 # AB-ITS-Inc-Flashlight-Android
 
+**NOTE**: This repository has been archived and will be deleted soon.
+
 It is a basic flashlight application for Android.
 It falls back to using the screen if a camera LED is not present on the device.
 
